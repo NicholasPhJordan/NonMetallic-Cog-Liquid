@@ -101,10 +101,10 @@ namespace MathForGames
         {
             //Checks if the target has a value before continuing
             if (Target == null)
-                return true;
+                return false;
 
             //Find the vector representing the distance between the actor and its target
-            Vector2 direction = Position - Target.Position;
+            Vector2 direction = Target.Position - Position;
             //Get the magnitude of the distance vector
             float distance = direction.Magnitude;
             //Use the inverse cosine to find the angle of the dot product in radians
@@ -142,7 +142,7 @@ namespace MathForGames
         {
             //If the target can be seen change the color to red and reset the player's position
             //If the target can't be seen change the color to blue
-            if(CheckTargetInSight(1.5f, 5))
+            if(CheckTargetInSight(0.5f, 5))
             {
                 _rayColor = Color.RED;
                 Target.Position = new Vector2();
