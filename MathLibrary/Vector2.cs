@@ -31,6 +31,7 @@ namespace MathLibrary
             }
         }
 
+        //length of the vector
         public float Magnitude
         {
             get
